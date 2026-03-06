@@ -11,36 +11,38 @@ export default function Hero() {
         <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
             <div className="container-tight z-20">
                 <div className="flex flex-col items-center text-center">
-                    {/* Badge */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                        className="mb-8 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono tracking-widest uppercase"
-                    >
-                        Open to Opportunities
-                    </motion.div>
+                    <div className="max-w-4xl mx-auto text-center">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5 }}
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold tracking-[0.3em] uppercase text-primary mb-8"
+                        >
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                            </span>
+                            Open to Opportunities
+                        </motion.div>
 
-                    {/* Heading */}
-                    <motion.h1
-                        initial={{ opacity: 0, y: 24 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.1 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-[1.1]"
-                    >
-                        Arbaaz <span className="text-gradient">Baig</span>
-                    </motion.h1>
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-[0.9]"
+                        >
+                            Arbaaz <span className="text-gradient">Baig</span>
+                        </motion.h1>
 
-                    {/* Role */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 24 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl leading-relaxed text-balance"
-                    >
-                        Flutter Developer crafting <span className="text-foreground font-semibold">high-performance mobile applications</span> and
-                        <span className="text-foreground font-semibold"> intelligent digital experiences</span>.
-                    </motion.p>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="text-lg md:text-2xl text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto font-medium"
+                        >
+                            Flutter Developer crafting <span className="text-foreground">high-performance</span> applications and <span className="text-foreground">intelligent</span> digital experiences.
+                        </motion.p>
+                    </div>
 
                     {/* CTAs */}
                     <motion.div

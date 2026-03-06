@@ -56,13 +56,13 @@ export default function Skills() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 auto-rows-[140px]">
+                <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 auto-rows-auto">
                     {/* Large Card: Flutter */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className={`md:col-span-4 lg:col-span-3 row-span-3 glass-card rounded-[3rem] p-10 flex flex-col justify-between border ${skills.primary.border} bg-gradient-to-br ${skills.primary.color} relative overflow-hidden group shadow-2xl ${skills.primary.glow}`}
+                        className={`md:col-span-4 lg:col-span-3 lg:row-span-2 glass-card rounded-[3rem] p-10 flex flex-col justify-between border ${skills.primary.border} bg-gradient-to-br ${skills.primary.color} relative overflow-hidden group shadow-2xl ${skills.primary.glow}`}
                     >
                         <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-700">
                             <Smartphone className="w-48 h-48" />
@@ -87,7 +87,7 @@ export default function Skills() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className={`md:col-span-2 lg:col-span-3 row-span-2 glass-card rounded-[2.5rem] p-8 flex flex-col justify-between border border-white/5 bg-gradient-to-br ${skill.color} hover:border-primary/30 transition-all duration-500 overflow-hidden relative group`}
+                            className={`md:col-span-2 lg:col-span-3 glass-card rounded-[2.5rem] p-8 flex flex-col justify-between border border-white/5 bg-gradient-to-br ${skill.color} hover:border-primary/30 transition-all duration-500 overflow-hidden relative group min-h-[220px]`}
                         >
                             <div className="absolute -bottom-4 -right-4 opacity-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">
                                 {React.cloneElement(skill.icon as React.ReactElement, { className: "w-32 h-32" } as any)}
