@@ -68,14 +68,14 @@ export default function Hero() {
                         </MagneticButton>
 
                         <MagneticButton>
-                            <Link
+                            <a
                                 href="/resume/Arbaaz_Baig_Resume.pdf"
                                 target="_blank"
-                                download
+                                download="Arbaaz_Baig_Resume.pdf"
                                 className="px-8 py-5 text-foreground/40 font-bold flex items-center gap-2 hover:text-foreground transition-all active:scale-95"
                             >
                                 Resume <Download className="w-4 h-4" />
-                            </Link>
+                            </a>
                         </MagneticButton>
                     </motion.div>
 

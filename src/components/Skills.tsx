@@ -15,9 +15,24 @@ const skills = {
         glow: "shadow-blue-500/10",
     },
     medium: [
-        { name: "Dart", icon: <Code2 className="w-6 h-6" />, color: "from-blue-600/10 to-transparent" },
-        { name: "Firebase", icon: <Database className="w-6 h-6" />, color: "from-orange-500/10 to-transparent" },
-        { name: "REST APIs", icon: <Globe className="w-6 h-6" />, color: "from-emerald-500/10 to-transparent" },
+        {
+            name: "Dart",
+            icon: <Code2 className="w-6 h-6" />,
+            color: "from-blue-600/10 to-transparent",
+            description: "Core language for Flutter development, optimized for UI-first experiences."
+        },
+        {
+            name: "Firebase",
+            icon: <Database className="w-6 h-6" />,
+            color: "from-orange-500/10 to-transparent",
+            description: "NoSQL DB, specialized in authentication, hosting, and real-time syncing."
+        },
+        {
+            name: "REST APIs",
+            icon: <Globe className="w-6 h-6" />,
+            color: "from-emerald-500/10 to-transparent",
+            description: "Architecting clean endpoints and seamless data flow between mobile & web."
+        },
     ],
     small: [
         { name: "React", icon: <Layout className="w-5 h-5" /> },
@@ -82,6 +97,9 @@ export default function Skills() {
                             </div>
                             <div>
                                 <h4 className="text-2xl font-bold tracking-tight mb-2">{skill.name}</h4>
+                                <p className="text-sm text-muted-foreground/80 leading-relaxed font-medium">
+                                    {skill.description}
+                                </p>
                             </div>
                         </motion.div>
                     ))}
