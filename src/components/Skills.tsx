@@ -62,18 +62,18 @@ export default function Skills() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className={`md:col-span-4 lg:col-span-3 lg:row-span-2 glass-card rounded-[3rem] p-10 flex flex-col justify-between border ${skills.primary.border} bg-gradient-to-br ${skills.primary.color} relative overflow-hidden group shadow-2xl ${skills.primary.glow}`}
+                        className={`md:col-span-4 lg:col-span-3 lg:row-span-2 glass-card rounded-[3rem] p-6 md:p-8 flex flex-col justify-between border ${skills.primary.border} bg-gradient-to-br ${skills.primary.color} relative overflow-hidden group shadow-2xl ${skills.primary.glow}`}
                     >
-                        <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-700">
+                        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-700">
                             <Smartphone className="w-48 h-48" />
                         </div>
-                        <div className="relative z-10 w-20 h-20 rounded-3xl bg-white/10 flex items-center justify-center mb-6 border border-white/10">
+                        <div className="relative z-10 w-16 h-16 rounded-3xl bg-white/10 flex items-center justify-center mb-6 border border-white/10">
                             {skills.primary.icon}
                         </div>
                         <div className="relative z-10">
-                            <div className="text-sm font-mono text-primary mb-2 uppercase tracking-[0.2em] font-bold">{skills.primary.level}</div>
-                            <h3 className="text-4xl font-black mb-4 tracking-tight">{skills.primary.title}</h3>
-                            <p className="text-muted-foreground text-lg leading-relaxed max-w-md">
+                            <div className="text-[10px] font-mono text-primary mb-2 uppercase tracking-[0.2em] font-bold">{skills.primary.level}</div>
+                            <h3 className="text-3xl font-black mb-4 tracking-tight">{skills.primary.title}</h3>
+                            <p className="text-muted-foreground text-base leading-relaxed max-w-md">
                                 {skills.primary.description}
                             </p>
                         </div>
@@ -87,17 +87,17 @@ export default function Skills() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className={`md:col-span-2 lg:col-span-3 glass-card rounded-[2.5rem] p-8 flex flex-col justify-between border border-white/5 bg-gradient-to-br ${skill.color} hover:border-primary/30 transition-all duration-500 overflow-hidden relative group min-h-[220px]`}
+                            className={`md:col-span-2 lg:col-span-3 glass-card rounded-[2.5rem] p-6 md:p-8 flex flex-col justify-between border border-white/5 bg-gradient-to-br ${skill.color} hover:border-primary/30 transition-all duration-500 overflow-hidden relative group min-h-[200px]`}
                         >
                             <div className="absolute -bottom-4 -right-4 opacity-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">
-                                {React.cloneElement(skill.icon as React.ReactElement, { className: "w-32 h-32" } as any)}
+                                {React.cloneElement(skill.icon as React.ReactElement, { className: "w-24 h-24" } as any)}
                             </div>
-                            <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                            <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
                                 <div className="text-primary">{skill.icon}</div>
                             </div>
                             <div>
-                                <h4 className="text-2xl font-bold tracking-tight mb-2">{skill.name}</h4>
-                                <p className="text-sm text-muted-foreground/80 leading-relaxed font-medium">
+                                <h4 className="text-xl font-bold tracking-tight mb-2">{skill.name}</h4>
+                                <p className="text-xs text-muted-foreground/80 leading-relaxed font-medium">
                                     {skill.description}
                                 </p>
                             </div>
