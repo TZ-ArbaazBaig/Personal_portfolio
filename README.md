@@ -35,7 +35,11 @@ An "Infinite Tier" developer portfolio built with a focus on high-fidelity inter
    ```
 
 3. **Set up environment variables:**
-   Create a `.env.local` for EmailJS keys:
+   The project uses EmailJS for the contact form. Copy `.env.example` to `.env.local` and add your keys:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Keys in `.env.local`:
    ```env
    NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id

@@ -13,7 +13,7 @@ export default function Contact() {
     const [isSending, setIsSending] = React.useState(false);
 
     React.useEffect(() => {
-        emailjs.init("F-rVcPDPTAPbhyiyb");
+        emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "");
     }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -23,10 +23,10 @@ export default function Contact() {
         setIsSending(true);
         try {
             await emailjs.sendForm(
-                "service_u455uuf",
-                "template_8ndx3xs",
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
                 formRef.current,
-                "F-rVcPDPTAPbhyiyb"
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
             );
             alert("Message sent successfully!");
             formRef.current.reset();
