@@ -2,8 +2,7 @@
 
 An "Infinite Tier" developer portfolio built with a focus on high-fidelity interactions, 3D physics, and intelligent user experience.
 
-![Portfolio Preview](public/preview.png) *(Note: Ensure you have a preview image at this path)*
-
+![Portfolio Preview](public/preview.png)
 ## 🚀 Elevated Features
 
 - **3D Physics-based Tilt Cards**: Interactive project and skill cards powered by Framer Motion and custom spring physics.
