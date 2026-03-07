@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import {
     SiFlutter, SiDart, SiFirebase, SiGooglemaps, SiReact,
-    SiNextdotjs, SiJavascript, SiHtml5, SiCss3, SiNodedotjs,
+    SiNextdotjs, SiJavascript, SiHtml5, SiNodedotjs,
     SiPython, SiMongodb, SiGit, SiAndroidstudio
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
