@@ -2,46 +2,67 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Smartphone, Code2, Database, Globe, Cpu, Layout, Boxes, GitBranch, Map } from "lucide-react";
+import {
+    Smartphone, Server, FileJson, FileCode2, Terminal, MonitorSmartphone, LayoutTemplate, Flame, Wrench, Layout
+} from "lucide-react";
+import {
+    SiFlutter, SiDart, SiFirebase, SiGooglemaps, SiReact,
+    SiNextdotjs, SiJavascript, SiHtml5, SiCss3, SiNodedotjs,
+    SiPython, SiMongodb, SiGit, SiAndroidstudio
+} from "react-icons/si";
+import { TbApi } from "react-icons/tb";
+import { VscVscode } from "react-icons/vsc";
 
-const skills = {
-    primary: {
-        title: "Flutter",
-        level: "Expert",
-        description: "Specialized in building high-performance, complex cross-platform mobile applications with custom architectures.",
-        icon: <Smartphone className="w-10 h-10" />,
-        color: "from-blue-500/20 to-cyan-500/20",
-        border: "border-blue-500/30",
-        glow: "shadow-blue-500/10",
+const skillCategories = [
+    {
+        title: "Mobile Development",
+        icon: <Smartphone className="w-6 h-6" />,
+        color: "from-blue-500/10 to-cyan-500/5",
+        span: "md:col-span-2 lg:col-span-3",
+        skills: [
+            { name: "Flutter", icon: <SiFlutter className="w-5 h-5 text-[#02569B]" /> },
+            { name: "Dart", icon: <SiDart className="w-5 h-5 text-[#0175C2]" /> },
+            { name: "Firebase", icon: <SiFirebase className="w-5 h-5 text-[#FFCA28]" /> },
+            { name: "Google Maps API", icon: <SiGooglemaps className="w-5 h-5 text-[#4285F4]" /> },
+        ]
     },
-    medium: [
-        {
-            name: "Dart",
-            icon: <Code2 className="w-6 h-6" />,
-            color: "from-blue-600/10 to-transparent",
-            description: "Core language for Flutter development, optimized for UI-first experiences."
-        },
-        {
-            name: "Firebase",
-            icon: <Database className="w-6 h-6" />,
-            color: "from-orange-500/10 to-transparent",
-            description: "NoSQL DB, specialized in authentication, hosting, and real-time syncing."
-        },
-        {
-            name: "REST APIs",
-            icon: <Globe className="w-6 h-6" />,
-            color: "from-emerald-500/10 to-transparent",
-            description: "Architecting clean endpoints and seamless data flow between mobile & web."
-        },
-    ],
-    small: [
-        { name: "React", icon: <Layout className="w-5 h-5" /> },
-        { name: "Next.js", icon: <Cpu className="w-5 h-5" /> },
-        { name: "Python", icon: <Boxes className="w-5 h-5" /> },
-        { name: "Git", icon: <GitBranch className="w-5 h-5" /> },
-        { name: "Maps API", icon: <Map className="w-5 h-5" /> },
-    ],
-};
+    {
+        title: "Frontend Development",
+        icon: <Layout className="w-6 h-6" />,
+        color: "from-violet-500/10 to-fuchsia-500/5",
+        span: "md:col-span-2 lg:col-span-3",
+        skills: [
+            { name: "React", icon: <SiReact className="w-5 h-5 text-[#61DAFB]" /> },
+            { name: "Next.js", icon: <SiNextdotjs className="w-5 h-5 text-white" /> },
+            { name: "JavaScript", icon: <SiJavascript className="w-5 h-5 text-[#F7DF1E]" /> },
+            { name: "HTML / CSS", icon: <SiHtml5 className="w-5 h-5 text-[#E34F26]" /> },
+        ]
+    },
+    {
+        title: "Backend & APIs",
+        icon: <Server className="w-6 h-6" />,
+        color: "from-emerald-500/10 to-teal-500/5",
+        span: "md:col-span-4 lg:col-span-4",
+        skills: [
+            { name: "Node.js", icon: <SiNodedotjs className="w-5 h-5 text-[#339933]" /> },
+            { name: "Python", icon: <SiPython className="w-5 h-5 text-[#3776AB]" /> },
+            { name: "REST APIs", icon: <TbApi className="w-5 h-5 text-[#00E676]" /> },
+            { name: "MongoDB", icon: <SiMongodb className="w-5 h-5 text-[#47A248]" /> },
+        ]
+    },
+    {
+        title: "Tools & Platforms",
+        icon: <Wrench className="w-6 h-6" />,
+        color: "from-orange-500/10 to-amber-500/5",
+        span: "md:col-span-4 lg:col-span-2",
+        skills: [
+            { name: "Git", icon: <SiGit className="w-5 h-5 text-[#F05032]" /> },
+            { name: "Firebase", icon: <SiFirebase className="w-5 h-5 text-[#FFCA28]" /> },
+            { name: "Android Studio", icon: <SiAndroidstudio className="w-5 h-5 text-[#3DDC84]" /> },
+            { name: "VS Code", icon: <VscVscode className="w-5 h-5 text-[#007ACC]" /> },
+        ]
+    }
+];
 
 export default function Skills() {
     return (
@@ -56,68 +77,37 @@ export default function Skills() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 auto-rows-auto">
-                    {/* Large Card: Flutter */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className={`md:col-span-4 lg:col-span-3 lg:row-span-2 glass-card rounded-[3rem] p-6 md:p-8 flex flex-col justify-between border ${skills.primary.border} bg-gradient-to-br ${skills.primary.color} relative overflow-hidden group shadow-2xl ${skills.primary.glow}`}
-                    >
-                        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-700">
-                            <Smartphone className="w-48 h-48" />
-                        </div>
-                        <div className="relative z-10 w-16 h-16 rounded-3xl bg-white/10 flex items-center justify-center mb-6 border border-white/10">
-                            {skills.primary.icon}
-                        </div>
-                        <div className="relative z-10">
-                            <div className="text-[10px] font-mono text-primary mb-2 uppercase tracking-[0.2em] font-bold">{skills.primary.level}</div>
-                            <h3 className="text-3xl font-black mb-4 tracking-tight">{skills.primary.title}</h3>
-                            <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-                                {skills.primary.description}
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    {/* Medium Cards */}
-                    {skills.medium.map((skill, idx) => (
+                <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 auto-rows-[140px]">
+                    {skillCategories.map((category, idx) => (
                         <motion.div
-                            key={skill.name}
+                            key={category.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className={`md:col-span-2 lg:col-span-3 glass-card rounded-[2.5rem] p-6 md:p-8 flex flex-col justify-between border border-white/5 bg-gradient-to-br ${skill.color} hover:border-primary/30 transition-all duration-500 overflow-hidden relative group min-h-[200px]`}
+                            className={`${category.span} row-span-2 glass-card rounded-[2.5rem] p-6 md:p-8 flex flex-col justify-between border border-white/5 bg-gradient-to-br ${category.color} hover:border-primary/30 transition-all duration-500 overflow-hidden relative group`}
                         >
                             <div className="absolute -bottom-4 -right-4 opacity-5 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">
-                                {React.cloneElement(skill.icon as React.ReactElement, { className: "w-24 h-24" } as any)}
+                                {React.cloneElement(category.icon as React.ReactElement, { className: "w-24 h-24" } as any)}
                             </div>
-                            <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                                <div className="text-primary">{skill.icon}</div>
-                            </div>
-                            <div>
-                                <h4 className="text-xl font-bold tracking-tight mb-2">{skill.name}</h4>
-                                <p className="text-xs text-muted-foreground/80 leading-relaxed font-medium">
-                                    {skill.description}
-                                </p>
-                            </div>
-                        </motion.div>
-                    ))}
 
-                    {/* Small Cards */}
-                    {skills.small.map((skill, idx) => (
-                        <motion.div
-                            key={skill.name}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.05 }}
-                            className="md:col-span-1 lg:col-span-1 row-span-1 glass-card rounded-[2rem] p-4 flex flex-col items-center justify-center gap-3 border border-white/5 hover:bg-white/5 hover:border-white/10 transition-all group"
-                        >
-                            <div className="text-muted-foreground group-hover:text-primary group-hover:scale-110 transition-all">
-                                {skill.icon}
+                            <div className="flex items-center gap-4 mb-4 md:mb-6">
+                                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                                    <div className="text-primary">{category.icon}</div>
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-bold tracking-tight">{category.title}</h3>
                             </div>
-                            <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">{skill.name}</span>
+
+                            <div className="grid grid-cols-2 gap-3 mt-auto relative z-10">
+                                {category.skills.map(skill => (
+                                    <div key={skill.name} className="flex items-center gap-3 p-3 md:p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group/badge cursor-default">
+                                        <div className="p-2 rounded-xl bg-black/20 group-hover/badge:bg-black/40 transition-colors">
+                                            {skill.icon}
+                                        </div>
+                                        <span className="text-xs md:text-sm font-semibold text-muted-foreground/90 group-hover/badge:text-foreground transition-colors tracking-wide">{skill.name}</span>
+                                    </div>
+                                ))}
+                            </div>
                         </motion.div>
                     ))}
                 </div>
